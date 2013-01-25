@@ -1,15 +1,22 @@
 ybot-contrib
 =============
 
-ybot-contrib - is public repo for ybot's commutity plugins.
+ybot-contrib - is public repo for [Ybot](https://github.com/0xAX/Ybot) commutity plugins.
 
 Plugins
 ============
 
+  * travis - [travis-ci](https://travis-ci.org/) api.
+  
+Usage
+============
+
+For plugin usage just copy in in your Ybot plugins directory.
+
 Contribute
 ============
 
-  * Fork main repository (https://github.com/0xAX/ybot-contribt).
+  * Fork main repository (https://github.com/0xAX/ybot-contrib).
   * Add your plugin.
   * Send pull request.
 
