@@ -10,8 +10,6 @@
 #  Ybot travis repo Owner RepoName
 #
 
-TOKEN = '5tmRfveoEwLUJpqGFkUU'
-
 import sys
 import urllib
 import urllib2
