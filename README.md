@@ -7,6 +7,8 @@ Plugins
 ============
 
   * travis - [travis-ci](https://travis-ci.org/) api.
+  * reddit - some reddit functions.
+  * google - Plugins which use Google services.
   
 Usage
 ============
