@@ -25,7 +25,6 @@ if mode[0] == 'joke':
 	response = urllib2.urlopen(api_url)
 	# read response
 	jokes = json.loads(response.read())
-	#print jokes['data']['children']
 	# traverse all jokes
 	for joke in jokes['data']['children']:
 		# collect jokes

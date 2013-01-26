@@ -48,7 +48,7 @@ def make_search(query):
 try:
   # Get search query
   query = sys.argv[1]
-  make_search(query)
+  image_search(query)
 except Exception:
   # Return error string
   print 'Wrong usage of travis plugin.'
