@@ -1,10 +1,10 @@
 # Python ---------------
-
+ 
 .py[cod]
-
+ 
 # C extensions
 *.so
-
+ 
 # Packages
 *.egg
 *.egg-info
@@ -19,25 +19,25 @@ develop-eggs
 .installed.cfg
 lib
 lib64
-
+ 
 # Installer logs
 pip-log.txt
-
+ 
 # Unit test / coverage reports
 .coverage
 .tox
 nosetests.xml
-
+ 
 # Translations
 *.mo
-
+ 
 # Mr Developer
 .mr.developer.cfg
 .project
 .pydevproject
-
+ 
 # Ruby ---------------
-
+ 
 *.gem
 *.rbc
 .bundle
@@ -51,14 +51,14 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-
+ 
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
-
+ 
 # Perl ---------------
-
+ 
 blib/
 .build/
 _build/
@@ -75,4 +75,3 @@ META.yml
 MYMETA.yml
 nytprof.out
 pm_to_blib
-
