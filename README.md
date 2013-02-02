@@ -9,6 +9,7 @@ Plugins
   * travis - [travis-ci](https://travis-ci.org/) api.
   * reddit - some reddit functions.
   * google - Plugins which use Google services.
+  * deploy - Deploy your application with Ybot and capistrano.
   
 Usage
 ============
