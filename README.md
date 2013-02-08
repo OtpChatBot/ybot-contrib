@@ -10,6 +10,7 @@ Plugins
   * reddit - some reddit functions.
   * google - Plugins which use Google services.
   * deploy - Deploy your application with Ybot and capistrano.
+  * weather.py - Check weather in your region.
   
 Usage
 ============
