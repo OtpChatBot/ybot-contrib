@@ -6,9 +6,12 @@ ybot-contrib - is public repo for [Ybot](https://github.com/0xAX/Ybot) commutity
 Plugins
 ============
 
+  * alot - Shows a picture of an alot
+  * bravo - Bravooooo
   * travis - [travis-ci](https://travis-ci.org/) api.
   * reddit - some reddit functions.
   * google - Plugins which use Google services.
+  * deploy - Deploy your application with Ybot and capistrano.
   
 Usage
 ============
