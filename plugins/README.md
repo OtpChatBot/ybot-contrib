@@ -7,7 +7,9 @@ Plugins
 ============
 
   * alot - Shows a picture of an alot
+  * base64 - Encode/Decode base64
   * bravo - Bravooooo
+  * bee - beeeeeeeees :)
   * travis - [travis-ci](https://travis-ci.org/) api.
   * reddit - some reddit functions.
   * google - Plugins which use Google services.
