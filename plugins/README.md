@@ -7,6 +7,7 @@ Plugins
 ============
 
   * alot - Shows a picture of an alot
+  * asci - Show text in asci
   * base64 - Encode/Decode base64
   * bravo - Bravooooo
   * bee - beeeeeeeees :)
