@@ -2,7 +2,12 @@
 
 #
 # Ybot Github issues manipulating
-# Usage: Ybot github_issue owner/repo title: body: issues body....
+# Usage: 
+#       # Create issue
+#       Ybot github_issue owner/repo title: body: issues body....
+#
+#       # Get issues
+#       Ybot github_issue owner/repo
 #
 # Required parameters:
 #
@@ -35,55 +40,72 @@ if ARGV.length != 1
     exit(0)
 end
 
-# Get argument
+# Get owner/repo
 arg = ARGV[0]
-
-#
-# Parse argument
-#
-
-# Repo Owner 
-owner = ''
-
-# Repo name
-repo = ''
-
-# title
-title = ''
-
-# Get body
-body = ''
 
 # get owner
 owner = arg.split(' ')[0].split('/')[0]
 # get repo
 repo = arg.split(' ')[0].split('/')[1]
 
-# get title
-title_tail = arg.split('title:')[1]
-title =  title_tail.split('body:')[0].strip
+# Check argument count
+if ARGV.length == 1
+	#
+	# get issues info
+	#
+	issues = ''
+	#
+	# Make request
+	#
+	uri = URI.parse(api_url + 'repos/' + owner + '/' + repo + '/issues')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = http.request(request)
+    json_resp = JSON.parse(response.body)
+    # collect issues
+    json_resp.each do |i|
+    	issues = i["number"].to_s() + '. ' + i["title"] + '\n' + i["body"] + '\n' + i["url"] + '\n--------------------------------' 
+    end
+    # return issues
+    puts issues
+#
+# create issue
+#
+else
+	# title
+	title = ''
 
-# get body
-body = arg.split('body:')[1].strip
+	# Get body
+	body = ''
 
-# build body request
-json_body = {title: title, body: body}.to_json
+	# get title
+	title_tail = arg.split('title:')[1]
+	title =  title_tail.split('body:')[0].strip
 
-# Make request
-uri = URI.parse(api_url + 'repos/' + owner + '/' + repo + '/issues')
+	# get body
+	body = arg.split('body:')[1].strip
 
-puts uri
+	# build body request
+	json_body = {title: title, body: body}.to_json
 
-http = Net::HTTP.new(uri.host, uri.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
-request = Net::HTTP::Post.new(uri.request_uri,initheader = {'Content-Type' =>'application/json'})
-request.body  = json_body
-request.basic_auth GITHUB_USER, GITHUB_PASSWORD
-response = http.request(request)
+	# Make request
+	uri = URI.parse(api_url + 'repos/' + owner + '/' + repo + '/issues')
+	#
+	# Make request
+	#
+	http = Net::HTTP.new(uri.host, uri.port)
+	http.use_ssl = true
+	http.verify_mode = OpenSSL::SSL::VERIFY_NONE 
+	request = Net::HTTP::Post.new(uri.request_uri,initheader = {'Content-Type' =>'application/json'})
+	request.body  = json_body
+	request.basic_auth GITHUB_USER, GITHUB_PASSWORD
+	response = http.request(request)
 
-begin
-	puts 'Issues created: ' + JSON.parse(response.body)["url"]
-rescue 
-	puts 'Ooops, something going wrong'
+	begin
+		puts 'Issues created: ' + JSON.parse(response.body)["url"]
+	rescue 
+		puts 'Ooops, something going wrong'
+	end
 end
