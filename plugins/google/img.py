@@ -37,6 +37,6 @@ try:
   search_img(query)
 except Exception:
   # Return error string
-  print 'Wrong usage of travis plugin.'
+  print 'Wrong usage of travis plugin.\nUsage:\nYbot img twitter logo'
 
 

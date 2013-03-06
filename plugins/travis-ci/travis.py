@@ -64,4 +64,4 @@ elif (mode[0] == 'repo') and (args_count == 3):
 	# get repository info
 	get_repo_by_id(mode[1], mode[2])
 else:
-	print 'Wrong usage of travis plugin.'
+	print 'Wrong usage of travis plugin.\nUsage:\nYbot travis all\nYbot travis repo Owner RepoName'

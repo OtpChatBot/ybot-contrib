@@ -51,4 +51,4 @@ try:
   image_search(query)
 except Exception:
   # Return error string
-  print 'Wrong usage of travis plugin.'
+  print 'Wrong usage of travis plugin.\nUsage:\nYbot search Ybot configuration'

@@ -32,4 +32,4 @@ if mode[0] == 'joke':
 	# return
 	print jokes_list[random.randint(0, len(jokes_list) - 1)].encode('utf-8')
 else:
-	print 'Wrong usage of travis plugin.'
+	print 'Wrong usage of travis plugin.\nUsage:\nYbot reddit joke'
