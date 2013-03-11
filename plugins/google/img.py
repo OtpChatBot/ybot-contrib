@@ -19,17 +19,17 @@ def search_img(query):
 	# api url
 	api_url = 'https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + urllib.quote_plus(query)
 	# make request
-  	response = urllib.urlopen(api_url)
-  	# read results
-  	results = response.read()
-  	# make json
-  	results = json.loads(results)['responseData']['results']
-  	# get random image
-  	random_image = random.randint(0, len(results) - 1)
-  	# get image
-  	img = results[random_image]
-  	# return
-  	print img['unescapedUrl']
+  response = urllib.urlopen(api_url)
+  # read results
+  results = response.read()
+  # make json
+  results = json.loads(results)['responseData']['results']
+  # get random image
+  random_image = random.randint(0, len(results) - 1)
+  # get image
+  img = results[random_image]
+  # return
+  print img['unescapedUrl']
 
 try:
   # Get search query
