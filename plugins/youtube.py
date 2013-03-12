@@ -15,7 +15,7 @@ import random
 # check args
 if len(sys.argv) > 2:
 	# print log
-	print 'Wrong usage.\nUsage:\nYbot youtube\nYbot youtube 5'
+	print 'Wrong usage.\nUsage:\nYbot youtube'
 	# exit
 	sys.exit()
 
