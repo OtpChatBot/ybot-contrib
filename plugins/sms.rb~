@@ -1,0 +1,48 @@
+#
+# Send sms with twillio
+# 
+# Usage:
+#     Ybot sms to_phone message
+#     Ybot sms +000000000000 message
+#
+# Required libs:
+#
+#  * twilio-ruby
+#  * rubygems
+#
+# Required fields:
+#
+#  * ACCOUNT_SEED
+#  * AUTH_TOKEN
+#  * FROM
+#
+
+require 'rubygems'
+require 'twilio-ruby'
+
+ACCOUNT_SEED = 'ACc777076e2a249b7ca0208b5659ecb4de'
+AUTH_TOKEN = '2a01a8a8ba95c9ca52668850f3ce5b59'
+FROM = '+16699005270'
+
+# check account seed and auth token
+if ACCOUNT_SEED == '' or AUTH_TOKEN == ''
+	puts 'ACCOUNT_SEED and AUTH_TOKEN fileds must be not empty'
+	exit
+end
+
+# check arguments count
+if ARGV.length != 1
+    puts 'Wrong usage.\nUsage:\n  Ybot Ybot sms +000000000000 message'
+    exit
+end
+
+# get to field
+to = ARGV[0].lstrip.split(' ')[0]
+# get message field
+message = ARGV[0].split(to)[1].lstrip
+# Send sms
+client = Twilio::REST::Client.new(ACCOUNT_SEED, AUTH_TOKEN)
+# send sms
+client.account.sms.messages.create({:from => FROM, :to => to , :body => message})
+# return
+puts 'Done'
